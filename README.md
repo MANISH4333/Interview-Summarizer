@@ -112,7 +112,8 @@ Short paragraph...
 ```text
 Interview-Summarizer/
 ├── summarizer.py          # 🐍 Main script
+├── prompt_iterations.md   # 📝 Documentation of prompt evolution
 ├── .env                   # 🔑 API key (not committed)
-├── .gitignore             # 🚫 Excludes .env
+├── .gitignore             # 🚫 Excludes .env and .txt files
 └── README.md              # 📖 This file
 ```
