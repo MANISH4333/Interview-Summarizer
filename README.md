@@ -1,10 +1,10 @@
-# Interview Transcript Summarizer
+# 🎙️ Interview Transcript Summarizer
 
 A lightweight Python tool that reads an interview transcript (`.txt`) and produces a structured HR summary using **Groq** (LLaMA 3.3).
 
 ---
 
-## Model Used
+## 🤖 Model Used
 
 | Field      | Value                    |
 |------------|--------------------------|
@@ -14,14 +14,28 @@ A lightweight Python tool that reads an interview transcript (`.txt`) and produc
 
 ---
 
-## Prerequisites
+## 🏗️ Architecture
+
+```mermaid
+graph TD
+    A[📄 transcript.txt] -->|Read via CLI| B(🐍 summarizer.py)
+    C[🔐 .env API Key] -->|Loaded via dotenv| B
+    B -->|API Request| D{🧠 Groq LLaMA 3.3 API}
+    D -->|Structured HR Summary| B
+    B -->|Print to Console| E[💻 Terminal Output]
+    B -->|Save to File| F[📝 transcript_summary.txt]
+```
+
+---
+
+## ⚙️ Prerequisites
 
 - Python 3.8 or higher
 - A valid [Groq API key](https://console.groq.com/keys)
 
 ---
 
-## Installation
+## 🚀 Installation
 
 Install the required packages:
 
@@ -31,7 +45,7 @@ pip install groq python-dotenv
 
 ---
 
-## .env Setup
+## 🔑 .env Setup
 
 Create a file named `.env` in the same directory as `summarizer.py`:
 
@@ -43,7 +57,7 @@ GROQ_API_KEY=your_groq_api_key_here
 
 ---
 
-## Usage
+## 💻 Usage
 
 ```bash
 python summarizer.py <filename.txt>
@@ -55,16 +69,16 @@ python summarizer.py <filename.txt>
 python summarizer.py transcript.txt
 ```
 
-### What happens:
+### 🔍 What happens:
 
-1. The transcript is read from the provided `.txt` file.
-2. The content is sent to the Groq API (LLaMA 3.3) with an HR analyst prompt.
-3. A structured summary is printed to the terminal.
-4. The summary is also saved as `transcript_summary.txt` in the current directory.
+1. 📂 The transcript is read from the provided `.txt` file.
+2. 🚀 The content is sent to the Groq API (LLaMA 3.3) with an HR analyst prompt.
+3. 💬 A structured summary is printed to the terminal.
+4. 💾 The summary is also saved as `transcript_summary.txt` in the current directory.
 
 ---
 
-## Output Format
+## 📋 Output Format
 
 The generated summary always contains exactly three sections:
 
@@ -82,7 +96,7 @@ Short paragraph...
 
 ---
 
-## Error Handling
+## 🛑 Error Handling
 
 | Scenario                        | Behavior                                      |
 |---------------------------------|-----------------------------------------------|
@@ -93,12 +107,12 @@ Short paragraph...
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
-```
+```text
 Interview-Summarizer/
-├── summarizer.py          # Main script
-├── .env                   # API key (not committed)
-├── .gitignore             # Excludes .env
-└── README.md              # This file
+├── summarizer.py          # 🐍 Main script
+├── .env                   # 🔑 API key (not committed)
+├── .gitignore             # 🚫 Excludes .env
+└── README.md              # 📖 This file
 ```
